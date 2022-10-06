@@ -1,18 +1,44 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { products } from '../../database/products';
+import Link from 'next/link';
+import { useState } from 'react';
 
+// import { Product, getProducts } from '../../database/products';
+
+// style variable for hats incl rainbow hover for product name:
 const productsLayout = css`
   display: flex;
   /* flex-direction: row; */
   flex-wrap: wrap;
   justify-content: space-between;
+  text-align: center;
   align-items: center;
   width: 100%;
+  a:link {
+    text-decoration: none;
+  }
+  a {
+    color: #939090;
+    background: linear-gradient(
+      90deg,
+      #df0504,
+      #fd6634,
+      #c4c525,
+      #02bc07,
+      #5073b8,
+      #079dfc
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  a:hover {
+    color: transparent;
+    transition: 500ms ease;
+  }
 `;
-
-const productStyle = css`
+// rainbow frame:
+const productFrameStyle = css`
   border-style: solid;
   border-width: 2px;
   border-image: linear-gradient(
@@ -31,6 +57,26 @@ const productStyle = css`
   color: #5b5757;
 `;
 
+// useState for product counter:
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      {count}
+      <button onClick={() => setCount(count + 1)}>+</button>
+      <button onClick={() => setCount(count - 1)}>-</button>
+    </>
+  );
+}
+
+// list of hats as an array (later to come from database):
+const products = [
+  { id: 1, name: 'rainbow', type: 'hat' },
+  { id: 2, name: 'donut', color: 'blue' },
+  { id: 3, name: 'cherry', color: 'white' },
+  { id: 4, name: 'croc', color: 'blue' },
+];
+
 export default function Products(props) {
   return (
     <>
@@ -43,23 +89,22 @@ export default function Products(props) {
       <div css={productsLayout}>
         {props.products.map((product) => {
           return (
-            <div key={`product-${product.id}`} css={productStyle}>
-              <h2>(product.name)</h2>
-              <Image
-                src={`/${product.id}-${product.name.toLowerCase()}.jpeg`}
-                alt=""
-                width="40px"
-                height="60px"
-              />
+            <div key={`product-${product.id}`}>
+              <div css={productFrameStyle}>
+                <Link href={`products/${product.id}`}>
+                  <Image
+                    src={`/${product.id}-${product.name.toLowerCase()}.jpeg`}
+                    alt=""
+                    width="250px"
+                    height="300px"
+                  />
+                </Link>
+              </div>
+              <h3>
+                <Link href={`products/${product.id}`}>{product.name}</Link>
+              </h3>
               <div>Sizes</div>
-              <div>
-                Image Name:{product.id}-{product.name.toLowerCase()}.jpeg
-              </div>
-              <div>
-                <button>+</button>
-                useStateWillGoHere
-                <button>-</button>
-              </div>
+              <Counter />
             </div>
           );
         })}

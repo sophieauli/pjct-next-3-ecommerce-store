@@ -29,7 +29,7 @@ const navBarItems = css`
     text-decoration: underline;
   }
   a:hover {
-    color: #5b5757;
+    color: #302e2e;
   }
 `;
 
@@ -38,7 +38,7 @@ const multicolorText = css`
     text-decoration: none;
   }
   a {
-    color: #5b5757;
+    color: #939090;
     background: linear-gradient(
       90deg,
       #df0504,
