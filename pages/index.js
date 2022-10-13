@@ -1,9 +1,11 @@
 import { css } from '@emotion/react';
+import { ClientRequest } from 'http';
 import Head from 'next/head';
 import Image from 'next/image';
 
 const logo = css`
   margin: 0 auto;
+  position: center;
 `;
 
 export default function Home() {

@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 
 // isOpen is just a boolean;
 const bannerStyles = (isOpen) => css`
+  display: flex;
   padding: 10px;
   transition: all 0.5s ease-in-out;
   height: 20px;
   position: fixed;
-  bottom: 0;
 
   ${!isOpen &&
   css`

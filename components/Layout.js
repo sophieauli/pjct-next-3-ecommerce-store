@@ -12,10 +12,10 @@ export default function Layout(props) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon_OMBRA.ico" />
       </Head>
 
-      <Header />
+      <Header cart={props.cart} />
 
       <main css={mainStyles}>{props.children}</main>
 

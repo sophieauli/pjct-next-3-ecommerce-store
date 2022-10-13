@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-// import Head from 'next/head';
+import Head from 'next/head';
 import Link from 'next/link';
 
 const navStyle = css`
@@ -57,7 +57,12 @@ const multicolorText = css`
   }
 `;
 
-export default function Header() {
+export default function Header(props) {
+  const cartAmountCount = props.cart?.reduce(
+    (accumulator, product) => accumulator + product.cart,
+    0,
+  );
+  console.log(props.cart);
   return (
     <header>
       <title>Home</title>
@@ -71,8 +76,10 @@ export default function Header() {
           <Link href="/products"> our hats </Link>
           <Link href="/inspo"> inspo </Link>
         </div>
-        <div css={navBarItems}>
-          <Link href="/cart"> shopping bag </Link>
+        <div data-test-id="cart-count" css={navBarItems}>
+          <Link href="/cart" data-test-id="cart-link">
+            <a>cart ({props.cart ? cartAmountCount : 0})</a>
+          </Link>
         </div>
       </nav>
     </header>
