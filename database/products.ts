@@ -8,7 +8,7 @@ export type Product = {
   productName: string;
   color: string;
   price: number;
-  description: Nullable<string>;
+  description: string | null;
 };
 
 export async function getProducts() {
