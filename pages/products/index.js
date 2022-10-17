@@ -2,8 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-
-// import { Product, getProducts } from '../../database/products';
+import { getProducts } from '../../database/connect';
 
 // style variable for hats incl rainbow hover for product name:
 const productsLayout = css`
@@ -56,14 +55,6 @@ const productFrameStyle = css`
   color: #5b5757;
 `;
 
-// list of hats as an array (later to come from database):
-const products = [
-  { id: 1, name: 'rainbow', color: 'pink', price: 15 },
-  { id: 2, name: 'donut', color: 'blue', price: 15 },
-  { id: 3, name: 'cherry', color: 'white', price: 15 },
-  { id: 4, name: 'croc', color: 'blue', price: 15 },
-];
-
 export default function Products(props) {
   return (
     <>
@@ -80,7 +71,9 @@ export default function Products(props) {
               <div css={productFrameStyle}>
                 <Link href={`products/${product.id}`}>
                   <Image
-                    src={`/${product.id}-${product.name.toLowerCase()}.jpeg`}
+                    src={`/${
+                      product.id
+                    }-${product.productName.toLowerCase()}.jpeg`}
                     alt=""
                     width="250px"
                     height="300px"
@@ -88,7 +81,9 @@ export default function Products(props) {
                 </Link>
               </div>
               <h3>
-                <Link href={`products/${product.id}`}>{product.name}</Link>
+                <Link href={`products/${product.id}`}>
+                  {product.productName}
+                </Link>
               </h3>
               <div>EUR {product.price}</div>
             </div>
@@ -99,10 +94,10 @@ export default function Products(props) {
   );
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const products = await getProducts();
   return {
     props: {
-      abc: 123,
       products: products,
     },
   };

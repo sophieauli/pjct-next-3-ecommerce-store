@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 455.2 491.7" style="enable-background:new 0 0 455.2 491.7;" xml:space="preserve">
+	 viewBox="0 0 453.5 491.7" style="enable-background:new 0 0 453.5 491.7;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
-	.st1{fill:#999999;stroke:#BCBEC0;stroke-width:0.3242;stroke-miterlimit:10;}
+	.st1{fill:#999999;}
 	.st2{font-family:'Rig-BoldInline';}
-	.st3{font-size:55.4256px;}
-	.st4{fill:#DE0605;}
-	.st5{fill:#FD6534;}
-	.st6{fill:#C4C524;}
-	.st7{fill:#08BC06;}
-	.st8{fill:#059DFC;}
-	.st9{fill:#050586;}
+	.st3{font-size:55.4352px;}
+	.st4{fill:none;stroke:#BCBEC0;stroke-width:0.3242;stroke-miterlimit:10;}
+	.st5{fill:#DE0605;}
+	.st6{fill:#FD6534;}
+	.st7{fill:#C4C524;}
+	.st8{fill:#08BC06;}
+	.st9{fill:#059DFC;}
+	.st10{fill:#050586;}
+	.st11{fill:none;stroke:#000000;stroke-width:1.001;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#000000;stroke-width:0.7078;stroke-miterlimit:10;}
+	.st13{fill:#060586;}
 </style>
-<g>
-	<rect x="274.6" y="158.4" class="st0" width="0" height="0"/>
-</g>
+<polygon class="st0" points="226.8,150.4 226.8,150.4 226.8,150.4 "/>
 <g>
 	<g>
-		<text transform="matrix(0.9887 0 0 1 129.0532 86.1897)" class="st1 st2 st3">OMBRA</text>
-		<text transform="matrix(0.9887 0 0 1 130.4751 172.7912)" class="st4 st2 st3">OMBRA</text>
-		<rect x="170.6" y="46.2" class="st0" width="0" height="0"/>
-		<rect x="505.5" y="432.3" class="st0" width="0" height="0"/>
+		<text transform="matrix(0.9885 0 0 1 113.955 78.1334)" class="st1 st2 st3">OMBRA</text>
+		<text transform="matrix(0.9885 0 0 1 113.955 78.1334)" class="st4 st2 st3">OMBRA</text>
+		<text transform="matrix(0.9885 0 0 1 113.955 164.7501)" class="st5 st2 st3">OMBRA</text>
+		<polygon class="st0" points="226.8,41.1 226.8,41.1 226.8,41.1 		"/>
+		<polygon class="st0" points="490.7,427.3 490.7,427.3 490.7,427.3 		"/>
 	</g>
-	<ellipse class="st4" cx="129.9" cy="153.8" rx="16.2" ry="16.4"/>
-	<text transform="matrix(0.9887 0 0 1 130.4751 230.2961)" class="st5 st2 st3">OMBRA</text>
-	<ellipse class="st5" cx="129.9" cy="211.3" rx="16.2" ry="16.4"/>
-	<text transform="matrix(0.9887 0 0 1 130.4751 288.4768)" class="st6 st2 st3">OMBRA</text>
-	<ellipse class="st6" cx="129.9" cy="269.5" rx="16.2" ry="16.4"/>
-	<text transform="matrix(0.9887 0 0 1 130.4751 348.6877)" class="st7 st2 st3">OMBRA</text>
-	<ellipse class="st7" cx="129.9" cy="329.7" rx="16.2" ry="16.4"/>
-	<text transform="matrix(0.9887 0 0 1 129.1382 405.5168)" class="st8 st2 st3">OMBRA</text>
-	<ellipse class="st8" cx="128.6" cy="386.5" rx="16.2" ry="16.4"/>
-	<text transform="matrix(0.9887 0 0 1 129.1382 464.3742)" class="st9 st2 st3">OMBRA</text>
-	<ellipse class="st9" cx="128.6" cy="445.4" rx="16.2" ry="16.4"/>
+	<ellipse class="st5" cx="121.2" cy="145.8" rx="16.2" ry="16.4"/>
+	<text transform="matrix(0.9885 0 0 1 113.955 222.2647)" class="st6 st2 st3">OMBRA</text>
+	<ellipse class="st6" cx="121.2" cy="203.3" rx="16.2" ry="16.4"/>
+	<text transform="matrix(0.9885 0 0 1 113.955 280.4561)" class="st7 st2 st3">OMBRA</text>
+	<ellipse class="st7" cx="121.2" cy="261.5" rx="16.2" ry="16.4"/>
+	<text transform="matrix(0.9885 0 0 1 113.955 340.6768)" class="st8 st2 st3">OMBRA</text>
+	<ellipse class="st8" cx="121.2" cy="321.7" rx="16.2" ry="16.4"/>
+	<text transform="matrix(0.9885 0 0 1 113.955 397.5157)" class="st9 st2 st3">OMBRA</text>
+	<ellipse class="st9" cx="119.9" cy="378.5" rx="16.2" ry="16.4"/>
+	<text transform="matrix(0.9885 0 0 1 113.955 456.3839)" class="st10 st2 st3">OMBRA</text>
 </g>
+<path class="st11" d="M453.6,8.5"/>
+<path class="st11" d="M0.1,8.5"/>
+<path class="st12" d="M226.9,13"/>
+<path class="st12" d="M0.1,13"/>
+<ellipse class="st13" cx="120" cy="437.1" rx="16.2" ry="16.4"/>
 </svg>

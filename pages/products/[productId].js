@@ -3,16 +3,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { products } from '../../database/products';
-
-// import { products } from '../../pages/products/index.js';
+import { getSingleProductById } from '../../database/connect';
 
 const productsDescriptionBox = css`
   display: flex;
-  /* justify-content: space-between; */
+  align-items: center;
   border-radius: 15px;
   border: 1px solid #ccc;
   padding: 20px;
+  width: 75%;
 `;
 const productDescription = css`
   width: 250px;
@@ -62,7 +61,9 @@ export default function Products(props) {
 
       <div>
         <Image
-          src={`/${props.product.id}-${props.product.name.toLowerCase()}.jpeg`}
+          src={`/${
+            props.product.id
+          }-${props.product.productName.toLowerCase()}.jpeg`}
           alt=""
           width="250px"
           height="300px"
@@ -70,7 +71,7 @@ export default function Products(props) {
         />
       </div>
       <div css={productDescription}>
-        <h1>{props.product.name}</h1>
+        <h1>{props.product.productName}</h1>
         <h3 css={textDescription}>{props.product.description}</h3>
         <h3 data-test-id="product-price">EUR {props.product.price},- </h3>
 
@@ -141,26 +142,24 @@ export default function Products(props) {
 
 //         {/* with the function above we first get the current cookie value and then set the cookie with every click. "else" means that if current cookie value is already there then its +1, so:*/}
 
-export function getServerSideProps(context) {
-  // Retrieve the animal ID from the URL:
+export async function getServerSideProps(context) {
+  // Retrieve the product ID from the URL:
   const productId = parseInt(context.query.productId);
 
-  // Finding the product:
-  const foundProduct = products.find((product) => {
-    return product.id === productId;
-  });
-  if (typeof foundProduct === 'undefined') {
+  if (typeof productId === 'undefined') {
     context.res.statusCode = 404;
     return {
       props: {
-        error: 'Animal not found',
+        error: 'We are sorry, but that hat is MIA...',
       },
     };
   }
 
+  const foundHat = await getSingleProductById(productId);
+  console.log(foundHat);
   return {
     props: {
-      product: foundProduct,
+      product: foundHat,
     },
   };
 }

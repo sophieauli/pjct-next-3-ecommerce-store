@@ -72,9 +72,7 @@ export default function Header(props) {
           <Link href="/"> OMBRA </Link>
         </div>
         <div css={navBarItems}>
-          <Link href="/"> about </Link>
           <Link href="/products"> our hats </Link>
-          <Link href="/inspo"> inspo </Link>
         </div>
         <div data-test-id="cart-count" css={navBarItems}>
           <Link href="/cart" data-test-id="cart-link">

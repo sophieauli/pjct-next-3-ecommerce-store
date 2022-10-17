@@ -41,17 +41,6 @@ function MyApp({ Component, pageProps }) {
             color: #02bc07;
             font-size: 25px;
             text-align: center;
-            /* background: linear-gradient(
-              90deg,
-              to #df0504,
-              #fd6634,
-              #c4c525,
-              #02bc07,
-              #5073b8,
-              #079dfc
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; */
           }
           h2 {
             font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica,

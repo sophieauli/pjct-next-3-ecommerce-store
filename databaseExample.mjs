@@ -13,3 +13,5 @@ console.log(
   SELECT * FROM products;
   `,
 );
+
+await sql.end();

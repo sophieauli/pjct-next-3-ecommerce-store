@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getProducts } from '../database/connect';
 
 // import { Product, getProducts } from '../../database/products';
 
@@ -16,13 +17,13 @@ const productsLayout = css`
   width: 100%;
 `;
 
-// list of hats as an array (later to come from database):
-const products = [
-  { id: 1, name: 'rainbow', color: 'pink', price: 15 },
-  { id: 2, name: 'donut', color: 'blue', price: 15 },
-  { id: 3, name: 'cherry', color: 'white', price: 15 },
-  { id: 4, name: 'croc', color: 'blue', price: 15 },
-];
+// // list of hats as an array (later to come from database):
+// const products = [
+//   { id: 1, name: 'rainbow', color: 'pink', price: 15 },
+//   { id: 2, name: 'donut', color: 'blue', price: 15 },
+//   { id: 3, name: 'cherry', color: 'white', price: 15 },
+//   { id: 4, name: 'croc', color: 'blue', price: 15 },
+// ];
 
 export default function Cart(props) {
   function handleRemove(id) {
@@ -34,7 +35,7 @@ export default function Cart(props) {
   const hatCart = props.cart?.map((cart) => {
     return {
       ...cart,
-      name: props.products.find((hat) => cart.id === hat.id)?.name,
+      name: props.products.find((hat) => cart.id === hat.id)?.productName,
       price: props.products.find((hat) => cart.id === hat.id)?.price,
     };
   });
@@ -45,6 +46,7 @@ export default function Cart(props) {
       0,
     );
   };
+  console.log(hatCart);
   return (
     <>
       <Head>
@@ -95,16 +97,14 @@ export default function Cart(props) {
   );
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const products = await getProducts();
   return {
     props: {
       products: products,
     },
   };
+
   // will be passed to the page component as props
   // as frontend: going from back- to frontend.
-
-  // to do: will need to "get" cookies and amount of products from the backend and display them on the frontend;
-
-  // every http request have headers, some have headers some have bodies, you have access to these in the serversideprops. cookies cld be that: cookies and
 }
