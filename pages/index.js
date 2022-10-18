@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 const logo = css`
   margin: 0 auto;
-  position
 `;
 
 export default function Home() {
@@ -12,7 +11,10 @@ export default function Home() {
     <div>
       <Head>
         <title>Home</title>
-        <meta name="description" content="First page with product overview" />
+        <meta
+          name="homepage with logo"
+          content="First page with logo - landing page"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

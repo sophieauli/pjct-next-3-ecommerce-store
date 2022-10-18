@@ -11,8 +11,8 @@ export default function Thx(props) {
   return (
     <>
       <Head>
-        <title>Thx</title>
-        <meta name="thx" content="thank you page after checkout" />
+        <title>thank you</title>
+        <meta name="thank you page" content="thank you page after checkout" />
       </Head>
 
       <main>

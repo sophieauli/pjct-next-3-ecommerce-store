@@ -5,7 +5,8 @@ import postgres from 'postgres';
 
 config();
 
-declare module globalthis {
+// typescript type for connection function:
+declare module globalThis {
   let postgresSqlClient: ReturnType<typeof postgres> | undefined;
 }
 
@@ -13,29 +14,16 @@ function connectOneTimeToDatabase() {
   if (!globalThis.postgresSqlClient) {
     globalThis.postgresSqlClient = postgres({
       transform: {
-        column: {
-          to: postgres.fromCamel,
-          from: postgres.toCamel,
-        },
+        ...postgres.camel,
+        undefined: null,
       },
     });
   }
   const sql = globalThis.postgresSqlClient;
   return sql;
 }
-
+// connect to PostgreSQL:
 export const sql = connectOneTimeToDatabase();
-
-// const sql = postgres({
-//   // transform: {
-//   //   column: {
-//   //     to: postgres.fromCamel,
-//   //     from: postgres.toCamel,
-//   //   },
-//   // },
-// });
-
-// const products = await sql;
 
 type Nullable<T> = T | null;
 export type Product = {
@@ -52,12 +40,4 @@ export async function getProducts() {
     `;
 
   return products;
-}
-
-export async function getSingleProductById(id: number) {
-  const [productId] = await sql<[Product]>`
-  SELECT * FROM products WHERE id = ${id}
-`;
-
-  return productId;
 }

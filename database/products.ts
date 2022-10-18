@@ -11,6 +11,7 @@ export type Product = {
   description: string | null;
 };
 
+// to get all products:
 export async function getProducts() {
   const products = await sql<Product[]>`
     SELECT * FROM products;
@@ -19,6 +20,7 @@ export async function getProducts() {
   return products;
 }
 
+// to only get a single product, e.g. for each (dynamic) product page:
 export async function getSingleProductById(id: number) {
   const [productId] = await sql<[Product]>`
   SELECT * FROM products WHERE id = ${id}
@@ -26,3 +28,18 @@ export async function getSingleProductById(id: number) {
 
   return productId;
 }
+
+//alternatively:
+// export async function getSingleProductById(id: number | undefined) {
+//   if (!id) return undefined;
+
+// // to delete a single product:
+// export async function deleteSingleProductById(id: number) {
+//   const [product] = await sql<Product[]>`
+//   DELETE FROM
+//   products
+//   WHERE
+//   id=${id}
+//   RETURNING * `;
+//   return product;
+// }

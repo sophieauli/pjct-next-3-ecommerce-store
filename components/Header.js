@@ -5,19 +5,20 @@ import Link from 'next/link';
 const navStyle = css`
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
   width: 100%;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   font-style: 'Calibri Light';
-  color: #939090
+  color: #939090;
   border-radius: 6px;
   margin: 20px 20px;
   padding: 10px 20px;
   a {
     margin-left: 12px;
     margin-right: 12px;
-  };`;
+  }
+`;
 
 const navBarItems = css`
   a:link {
@@ -72,7 +73,9 @@ export default function Header(props) {
           <Link href="/"> OMBRA </Link>
         </div>
         <div css={navBarItems}>
-          <Link href="/products"> our hats </Link>
+          <Link href="/products" data-test-id="products-link">
+            our hats
+          </Link>
         </div>
         <div data-test-id="cart-count" css={navBarItems}>
           <Link href="/cart" data-test-id="cart-link">

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
-import Header from '../components/Header';
-import Footer from './Footer';
+import Footer from './Footer.tsx';
+import Header from './Header';
 
 const mainStyles = css`
   padding: 10px 20px;

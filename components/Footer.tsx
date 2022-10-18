@@ -8,5 +8,5 @@ const footerStyles = css`
 `;
 
 export default function Footer() {
-  return <footer css={footerStyles}>'(c) Ombra</footer>;
+  return <footer css={footerStyles}>© OMBRA Ltd</footer>;
 }

@@ -1,7 +1,12 @@
 import Cookies from 'js-cookie';
 
+export type ProductCookieItem = {
+  id: number;
+  cart: number;
+};
 // function to parse a browser Cookie string and return an object of all cookie name-value pairs:
-export function getParsedCookie(key) {
+
+export function getParsedCookie(key: string): ProductCookieItem[] | undefined {
   const cookieValue = Cookies.get(key);
 
   if (!cookieValue) {
@@ -17,6 +22,10 @@ export function getParsedCookie(key) {
   }
 }
 
-export function setStringifiedCookie(key, value) {
+export function setStringifiedCookie(key: string, value: ProductCookieItem[]) {
   Cookies.set(key, JSON.stringify(value));
+}
+
+export function deleteCookie(key: string) {
+  Cookies.remove(key);
 }

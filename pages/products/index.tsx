@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
+import { GetServerSideProps, GetServerSidePropsResult } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProducts } from '../../database/connect';
+import { getProducts, Product } from '../../database/products';
 
 // style variable for hats incl rainbow hover for product name:
 const productsLayout = css`
@@ -55,12 +56,18 @@ const productFrameStyle = css`
   color: #5b5757;
 `;
 
-export default function Products(props) {
+// the props should be array from the database
+
+type Props = {
+  products: Product[];
+};
+
+export default function Products(props: Props) {
   return (
     <>
       <Head>
-        <title>About</title>
-        <meta name="description" content="List page of all products" />
+        <title>all products</title>
+        <meta name="product overview" content="List page of all products" />
       </Head>
 
       <h1>our hats</h1>
@@ -69,16 +76,18 @@ export default function Products(props) {
           return (
             <div key={`product-${product.id}`}>
               <div css={productFrameStyle}>
-                <Link href={`products/${product.id}`}>
-                  <Image
-                    src={`/${
-                      product.id
-                    }-${product.productName.toLowerCase()}.jpeg`}
-                    alt=""
-                    width="250px"
-                    height="300px"
-                  />
-                </Link>
+                <a data-test-id={`product-${product.id}`}>
+                  <Link href={`products/${product.id}`}>
+                    <Image
+                      src={`/${
+                        product.id
+                      }-${product.productName.toLowerCase()}.jpeg`}
+                      alt=""
+                      width="250px"
+                      height="300px"
+                    />
+                  </Link>
+                </a>
               </div>
               <h3>
                 <Link href={`products/${product.id}`}>
@@ -94,7 +103,9 @@ export default function Products(props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(): Promise<
+  GetServerSidePropsResult<Props>
+> {
   const products = await getProducts();
   return {
     props: {

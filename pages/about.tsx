@@ -5,7 +5,10 @@ export default function About() {
     <>
       <Head>
         <title>About</title>
-        <meta name="description" content="XYZ" />
+        <meta
+          name="about page"
+          content="Shoul showcase some information about the brand."
+        />
       </Head>
       About
     </>

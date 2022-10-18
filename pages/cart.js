@@ -51,7 +51,7 @@ export default function Cart(props) {
     <>
       <Head>
         <title>Cart</title>
-        <meta name="cart" content="List items placed in cart" />
+        <meta name="cart" content="List of items placed in cart." />
       </Head>
 
       <h1>your cart</h1>

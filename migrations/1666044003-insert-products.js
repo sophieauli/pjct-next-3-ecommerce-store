@@ -30,14 +30,14 @@ const products = [
 ];
 
 exports.up = async (sql) => {
-  await sql`
-  INSERT INTO products${sql(
+  await sql`INSERT INTO products${sql(
     products,
     'product_name',
     'color',
     'price',
     'description',
-  )}`;
+  )}
+  `;
 };
 
 exports.down = async (sql) => {
