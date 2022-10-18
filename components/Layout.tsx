@@ -1,14 +1,23 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
-import Footer from './Footer.tsx';
-import Header from './Header';
+import { ProductCookieItem } from '../utils/cookies';
+import Footer from './Footer';
+import Header from './Header.js';
 
 const mainStyles = css`
   padding: 10px 20px;
   margin: 20px;
 `;
 
-export default function Layout(props) {
+type CartNumber = {
+  cart: ProductCookieItem[] | undefined;
+};
+
+type ChildrenProps = {
+  children: JSX.Element;
+};
+
+export default function Layout(props: ChildrenProps & CartNumber) {
   return (
     <>
       <Head>

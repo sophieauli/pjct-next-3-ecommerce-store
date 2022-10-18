@@ -1,7 +1,7 @@
 import { css, Global } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import CookieBanner from '../components/CookieBanner';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout.tsx';
 import { getParsedCookie, setStringifiedCookie } from '../utils/cookies.ts';
 
 function MyApp({ Component, pageProps }) {
