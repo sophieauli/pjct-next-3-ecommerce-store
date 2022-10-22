@@ -7,16 +7,18 @@ import { getProducts } from '../database/connect';
 // import { Product, getProducts } from '../../database/products';
 
 // style variable for hats incl rainbow hover for product name:
+
+// singleProductInCartContainer;
 const productsLayout = css`
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: left;
-  align-items: left;
-  width: 100%;
+  width: auto;
+  margin: 20px;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-width: 5px;
+  border-radius: 20px;
 `;
-
 // // list of hats as an array (later to come from database):
 // const products = [
 //   { id: 1, name: 'rainbow', color: 'pink', price: 15 },
