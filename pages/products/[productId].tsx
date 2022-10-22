@@ -17,8 +17,11 @@ const productsDescriptionBox = css`
   width: 75%;
 `;
 const productDescription = css`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   width: 250px;
-  padding: -20px;
+  padding: 20px;
 `;
 const textDescription = css`
   font-style: 'Times New Roman';
@@ -94,7 +97,7 @@ export default function Products(props: Props & CartSingleProduct) {
         />
       </div>
       <div css={productDescription}>
-        <h1>{props.product.productName}</h1>
+        <h1 css={productDescription}>{props.product.productName}</h1>
         <h3 css={textDescription}>{props.product.description}</h3>
         <h3 data-test-id="product-price">EUR {props.product.price},- </h3>
 

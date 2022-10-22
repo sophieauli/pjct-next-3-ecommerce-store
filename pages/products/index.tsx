@@ -8,11 +8,13 @@ import { getProducts, Product } from '../../database/products';
 // style variable for hats incl rainbow hover for product name:
 const productsLayout = css`
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10px;
   flex-wrap: wrap;
-  justify-content: space-between;
   text-align: center;
   align-items: center;
+  padding: 20px;
   width: 100%;
   a:link {
     text-decoration: none;
@@ -36,27 +38,29 @@ const productsLayout = css`
     transition: 500ms ease;
   }
 `;
-// rainbow frame:
-const productFrameStyle = css`
+const singleProductContainer = css`
+  width: auto;
+  padding: 10px;
   border-style: solid;
-  border-width: 2px;
-  border-image: linear-gradient(
-      50deg,
-      #df0504,
-      #fd6634,
-      #c4c525,
-      #02bc07,
-      #5073b8,
-      #079dfc
-    )
-    1;
-  background-size: 300% 300%;
-  margin-top: 5px;
-  padding: 5px;
-  color: #5b5757;
+  border-color: #f5f5f5;
+  border-width: 5px;
+  border-radius: 20px;
 `;
 
-// the props should be array from the database
+const productDescriptionBelowImage = css`
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0px;
+`;
+
+const productNameBelowImage = css`
+  border: solid;
+  border-radius: 5px;
+  border-color: #939090;
+  border-width: 1px;
+  margin: auto;
+  padding: 0px 5px;
+`;
 
 type Props = {
   products: Product[];
@@ -74,27 +78,29 @@ export default function Products(props: Props) {
       <div css={productsLayout}>
         {props.products.map((product) => {
           return (
-            <div key={`product-${product.id}`}>
-              <div css={productFrameStyle}>
+            <div key={`product-${product.id}`} css={singleProductContainer}>
+              <div>
                 <a data-test-id={`product-${product.id}`}>
                   <Link href={`products/${product.id}`}>
                     <Image
                       src={`/${
                         product.id
                       }-${product.productName.toLowerCase()}.jpeg`}
-                      alt=""
+                      alt={`image of ${product.productName}`}
                       width="250px"
                       height="300px"
                     />
                   </Link>
                 </a>
               </div>
-              <h3>
-                <Link href={`products/${product.id}`}>
-                  {product.productName}
-                </Link>
-              </h3>
-              <div>EUR {product.price}</div>
+              <div css={productDescriptionBelowImage}>
+                <h3 css={productNameBelowImage}>
+                  <Link href={`products/${product.id}`}>
+                    {product.productName}
+                  </Link>
+                </h3>
+                <div>EUR {product.price}</div>
+              </div>
             </div>
           );
         })}

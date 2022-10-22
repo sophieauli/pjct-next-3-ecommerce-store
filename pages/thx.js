@@ -2,9 +2,13 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 
-const thx = css`
-  margin: 0 auto;
-  position: center;
+const mainStyle = css`
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
 `;
 
 export default function Thx(props) {
@@ -15,9 +19,8 @@ export default function Thx(props) {
         <meta name="thank you page" content="thank you page after checkout" />
       </Head>
 
-      <main>
+      <main css={mainStyle}>
         <Image
-          css={thx}
           src="/thankyou_centered.svg"
           alt="OMBRA logo"
           width="1000"

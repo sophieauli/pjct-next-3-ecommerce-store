@@ -1,3 +1,4 @@
+import '@fontsource/montserrat';
 import { css, Global } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import CookieBanner from '../components/CookieBanner';
@@ -30,20 +31,20 @@ function MyApp({ Component, pageProps }) {
             box-sizing: border-box;
           }
           body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Calibri Light',
-              'Open Sans', 'Helvetica Neue', sans-serif;
-            margin: 20px;
-            color: 5B5757;
+            font-family: 'Montserrat';
+            color: #939090;
+            align-items: center;
+            width: 100vw;
+            padding: 20px;
           }
           h1 {
-            font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica,
+
               sans-serif;
-            color: #02bc07;
-            font-size: 25px;
+            color: #939090;
             text-align: center;
           }
           h2 {
-            font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica,
+
               sans-serif;
             font-size: 25px;
             color: #5b5757;

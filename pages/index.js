@@ -2,8 +2,13 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 
-const logo = css`
-  margin: 0 auto;
+const mainStyle = css`
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
 `;
 
 export default function Home() {
@@ -18,9 +23,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main css={mainStyle}>
         <Image
-          css={logo}
           src="/logo_landing.svg"
           alt="OMBRA logo"
           width="1000"

@@ -4,10 +4,10 @@ import { ProductCookieItem } from '../utils/cookies';
 import Footer from './Footer';
 import Header from './Header.js';
 
-const mainStyles = css`
-  padding: 10px 20px;
-  margin: 20px;
-`;
+// const mainStyles = css`
+//   padding: 10px 20px;
+//   margin: 20px;
+// `;
 
 type CartNumber = {
   cart: ProductCookieItem[] | undefined;
@@ -26,7 +26,7 @@ export default function Layout(props: ChildrenProps & CartNumber) {
 
       <Header cart={props.cart} />
 
-      <main css={mainStyles}>{props.children}</main>
+      <main>{props.children}</main>
 
       <Footer />
     </>

@@ -2,25 +2,14 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const navStyle = css`
+const navBarStyle = css`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
-  border-radius: 10px;
   background-color: #f5f5f5;
-  font-style: 'Calibri Light';
+  padding: 10px;
+  border-radius: 10px;
   color: #939090;
-  border-radius: 6px;
-  margin: 20px 20px;
-  padding: 10px 20px;
-  a {
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-`;
-
-const navBarItems = css`
   a:link {
     color: #939090;
     text-decoration: none;
@@ -34,7 +23,7 @@ const navBarItems = css`
   }
 `;
 
-const multicolorText = css`
+const rainbowText = css`
   a:link {
     text-decoration: none;
   }
@@ -68,16 +57,16 @@ export default function Header(props) {
     <header>
       <title>Home</title>
       <meta name="description" content="XYZ" />
-      <nav css={navStyle}>
-        <div css={multicolorText}>
+      <nav css={navBarStyle}>
+        <div css={rainbowText}>
           <Link href="/"> OMBRA </Link>
         </div>
-        <div css={navBarItems}>
+        <div>
           <Link href="/products" data-test-id="products-link">
             our hats
           </Link>
         </div>
-        <div data-test-id="cart-count" css={navBarItems}>
+        <div data-test-id="cart-count">
           <Link href="/cart" data-test-id="cart-link">
             <a>cart ({props.cart ? cartAmountCount : 0})</a>
           </Link>
