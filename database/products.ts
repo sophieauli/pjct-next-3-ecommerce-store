@@ -21,7 +21,7 @@ export async function getProducts() {
 
 // to only get a single product, e.g. for each (dynamic) product page:
 export async function getSingleProductById(id: number) {
-  const [productId] = await sql<[Product[]]>`
+  const [productId] = await sql<Product[]>`
   SELECT * FROM products WHERE id = ${id}
 `;
 

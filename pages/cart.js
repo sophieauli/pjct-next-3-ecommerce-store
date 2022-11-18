@@ -21,9 +21,8 @@ const productsLayout = css`
   display: grid;
   grid-template-columns: 0.5fr;
   grid-template-rows: 300px;
-  grid-template-areas: "image" "description" "subtotal" "shipping" "total";
-  text-align: left;
-  grid-gap: 2px
+  grid-template-areas: 'image' 'description' 'subtotal' 'shipping' 'total';
+  text-align: ;
   margin: 20px;
 `;
 

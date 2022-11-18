@@ -173,7 +173,7 @@ export default function Products(props: Props & CartSingleProduct) {
                   ]);
                   return;
                 }
-                const foundCookie = props.cart.find(
+                const foundCookie = props.cart?.find(
                   (cookieProductObject: ProductCookieItem) =>
                     cookieProductObject?.id === props.product.id,
                 );
